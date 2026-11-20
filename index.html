@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="hato-ver" content="2026-11-19-off"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#FF6A1F"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="apple-touch-icon" href="icon-192.png"><link rel="icon" href="icon-192.png"><title>Hato – Gestión Ganadera</title>
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="hato-ver" content="2026-11-19-nvi"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#FF6A1F"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="apple-touch-icon" href="icon-192.png"><link rel="icon" href="icon-192.png"><title>Hato – Gestión Ganadera</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -351,7 +351,7 @@ function vh(){const t=tab=='inicio'?'Hoy':LBL[tab],d=new Date().toLocaleDateStri
 let NVY=null;
 function nvMark(){const nv=$('#nv'),on=nv&&nv.querySelector(':scope>button.on');if(!on)return;const m=document.createElement('i');m.id='nvi';nv.prepend(m);
 const y=on.offsetTop,h=on.offsetHeight;m.style.height=h+'px';
-if(NVY==null||NVY==y||RM()){m.style.transform=`translateY(${y}px)`}else{m.style.transition='none';m.style.transform=`translateY(${NVY}px)`;void m.offsetWidth;m.style.transition='';m.style.transform=`translateY(${y}px)`}NVY=y}
+m.style.transition='none';m.style.transform=`translateY(${NVY==null||RM()?y:NVY}px)`;void m.offsetWidth;m.style.transition='';if(NVY!=null&&NVY!=y&&!RM())m.style.transform=`translateY(${y}px)`;NVY=y}
 function estampida(){const e=$('#est');if(!e||RM())return 0;const L=innerWidth>=900?240:0,W=innerWidth-L,H=innerHeight,f=dir>0,n=W<600?9:15;
 let h='<i class="nube" style="--x0:'+(f?-W*.9:W*1.15)+'px;--x1:'+(f?W*1.15:-W*.9)+'px;--d:1.05s;--w:.12s"></i>';
 for(let k=0;k<n;k++){const sz=Math.round((W<600?60:80)+Math.random()*(W<600?50:80)),y=Math.round(H*.08+(H*.86-sz*.63)*(k/(n-1))+(Math.random()-.5)*40),d=(.8+Math.random()*.35).toFixed(2),w=(Math.random()*.28).toFixed(2);
